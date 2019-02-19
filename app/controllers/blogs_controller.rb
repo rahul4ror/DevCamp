@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy, :blog_status]
 
   def index
     @blogs = Blog.all
@@ -44,9 +44,14 @@ class BlogsController < ApplicationController
     end
   end
 
+  def blog_status
+    @blog.published? ? @blog.draft! : @blog.published!
+    redirect_to blogs_path
+  end
+
   private
     def set_blog
-      @blog = Blog.find(params[:id])
+      @blog = Blog.friendly.find(params[:id])
     end
 
     def blog_params
