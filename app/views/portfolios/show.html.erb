@@ -3,3 +3,11 @@
 
 <p><%= @portfolio_item.body %></p>
 <%= image_tag @portfolio_item.main_image %>
+
+<h1>Accociated Technologies:</h1>
+
+<% @portfolio_item.technologies.each do |tech| %>
+	<p>
+		<%= tech.name %>
+	</p>
+<% end %>
