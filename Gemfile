@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rake', '~> 12.3', '>= 12.3.2'
 gem 'friendly_id', '~> 5.1'
+gem 'devise', '~> 4.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
